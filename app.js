@@ -16,7 +16,8 @@ var corsOptions = {
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   credentials: true
 };
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse application/vnd.api+json as json
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(methodOverride());
@@ -26,7 +27,7 @@ app.get('/test', (req, res) => {
   res.json('it works!');
 });
 
-var sweeptakes = [
+var sweepstakes = [
   {
     id: 1,
     name: 'Sweepstake 1'
@@ -39,7 +40,7 @@ var sweeptakes = [
 
 app.get('/sweepstakes', (req, res) => {
   res.json({
-    sweeptakes
+    sweepstakes
   });
 });
 

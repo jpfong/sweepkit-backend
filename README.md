@@ -1,4 +1,4 @@
-# draft node backend
+# sweepKit node backend
 
 > Backend for sweepKit
 
@@ -14,5 +14,8 @@ node app.js
 
 # test a route
 localhost:8445/test
+
+# GET sweepstakes
+localhost:8445/sweepstakes
 ```
 
