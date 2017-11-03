@@ -18,7 +18,7 @@ var corsOptions = {
 };
 // app.use(cors(corsOptions));
 app.use(cors());
-app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse application/vnd.api+json as json
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(methodOverride());
 
@@ -44,5 +44,15 @@ app.get('/sweepstakes', (req, res) => {
   });
 });
 
+app.post('/sweepstakes', (req, res) => {
+  var sweepstake = {
+    id: sweepstakes.length + 1,
+    name: req.body.name
+  }
+  sweepstakes.push(sweepstake)
+  res.json({
+    sweepstake
+  });
+})
 
 console.log('Magic happens on port ' + port);
